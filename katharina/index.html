@@ -360,7 +360,11 @@ footer { background: var(--bg); border-top: 1px solid var(--line); padding: 44px
   /* Mobile: full-bleed background image, text LEFT over dark gradient */
   .hero { min-height: 100svh; display: flex; align-items: flex-end; }
   .hero-photo { position: absolute; inset: 0; }
-  .hero-photo img { object-fit: cover; object-position: center center; }
+  /* Mobile: show full-bleed bg, face visible at right */
+  .hero-photo img { 
+    object-fit: cover;
+    object-position: 78% center;
+  }
   .hero-photo::after {
     background:
       linear-gradient(to top, rgba(20,17,13,0.97) 0%, rgba(20,17,13,0.75) 40%, rgba(20,17,13,0.1) 70%, transparent 100%),
