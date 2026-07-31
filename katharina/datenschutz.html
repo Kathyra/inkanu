@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung | Katharina Rahmig</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* =====================
+   TOKEN & RESET
+   ===================== */
+:root {
+  --bg:     #14110D;
+  --bg2:    #1C1814;
+  --bg3:    #222018;
+  --cream:  #F0E8D8;
+  --gold:   #C9A87A;
+  --gold2:  #B8966A;
+  --text:   #C0B09A;
+  --muted:  #6A6050;
+  --line:   rgba(201,168,122,0.2);
+  --max:    1160px;
+
+  /* FONT TOKENS — used everywhere, no exceptions */
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Raleway', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* =====================
+   TYPOGRAPHY — 2 families only, period
+   ===================== */
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--cream);
+}
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* Size scale */
+.t-hero   { font-size: clamp(36px, 5vw, 62px); }
+.t-h2     { font-size: clamp(28px, 3.5vw, 44px); }
+.t-label  { font-family: var(--f-body); font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.t-body   { font-family: var(--f-body); font-size: 15.5px; font-weight: 300; line-height: 1.85; color: var(--text); }
+.t-italic { font-family: var(--f-display); font-style: italic; font-size: 18px; font-weight: 300; color: var(--text); }
+
+/* Glow on display text */
+.glow {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--gold) 0%, #FFEFDD 48%, var(--gold) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 16px rgba(201,168,122,0.45));
+  animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(201,168,122,0.38)); }
+  50%       { filter: drop-shadow(0 0 26px rgba(255,239,221,0.58)) drop-shadow(0 0 50px rgba(201,168,122,0.28)); }
+}
+
+/* =====================
+   LAYOUT
+   ===================== */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 52px; }
+
+/* =====================
+   NAV
+   ===================== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
+  background: linear-gradient(to bottom, rgba(20,17,13,0.9) 0%, transparent 100%);
+  transition: background 0.4s;
+}
+nav.solid { background: rgba(20,17,13,0.97); backdrop-filter: blur(10px); }
+.nav-name { font-family: var(--f-display); font-style: italic; font-size: 18px; font-weight: 300; color: var(--cream); }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a { font-family: var(--f-body); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text); transition: color 0.25s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; color: var(--cream); font-size: 20px; cursor: pointer; }
+
+/* =====================
+   BUTTONS — 1 style, 2 variants
+   ===================== */
+.btn {
+  display: inline-block;
+  padding: 13px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  font-family: var(--f-body);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.btn:hover { background: rgba(201,168,122,0.12); border-color: #FFEFDD; color: #FFEFDD; }
+.btn-fill { background: var(--gold); border-color: var(--gold); color: #14110D; text-decoration: none; }
+.btn-fill:hover { background: var(--gold2); border-color: var(--gold2); color: #14110D; }
+
+/* =====================
+   DIVIDER
+   ===================== */
+.divider { display: flex; align-items: center; gap: 16px; margin: 28px 0; }
+.dl { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
+.dr { flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--gold)); }
+.ds { color: var(--gold); font-size: 11px; }
+
+/* =====================
+   REVEAL ANIMATION
+   ===================== */
+.rv {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.85s cubic-bezier(.16,1,.3,1), transform 0.85s cubic-bezier(.16,1,.3,1);
+}
+.rv.in { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.12s; }
+.d2 { transition-delay: 0.24s; }
+.d3 { transition-delay: 0.36s; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* =====================
+   HERO — full bleed background photo, gradient left over right
+   ===================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-photo {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;   /* landscape photo, face naturally framed */
+}
+/* Gradient: dark opaque left → fades out right, never reaches the edge as a hard cut */
+.hero-photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right,
+      rgba(20,17,13,0.92) 0%,
+      rgba(20,17,13,0.75) 38%,
+      rgba(20,17,13,0.2)  62%,
+      rgba(20,17,13,0.0)  80%
+    ),
+    linear-gradient(to top,
+      rgba(20,17,13,0.6) 0%,
+      transparent 40%
+    );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 120px 52px 90px;
+  max-width: 52%;
+}
+
+/* Hero text — all inline styles live here so nothing is overridden elsewhere */
+.hero-hook {
+  font-family: var(--f-display);
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.18;
+  margin-bottom: 26px;
+  opacity: 0; transform: translateY(26px);
+  animation: fadeUp 1s 0.15s forwards;
+}
+.hero-hook em {
+  font-style: italic;
+  font-weight: 300;
+  background: linear-gradient(135deg, var(--gold) 0%, #FFEFDD 50%, var(--gold) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 12px rgba(201,168,122,0.45));
+}
+.hero-sub {
+  font-family: var(--f-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 42px;
+  opacity: 0; transform: translateY(20px);
+  animation: fadeUp 0.9s 0.45s forwards;
+}
+.hero-btns {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.75s forwards;
+}
+
+/* =====================
+   KENNST DU DAS
+   ===================== */
+.kdt { background: var(--bg2); padding: 100px 0; }
+.kdt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 52px; }
+.kdt-list { display: flex; flex-direction: column; gap: 22px; }
+.kdt-item { display: flex; gap: 16px; align-items: flex-start; }
+.kdt-bullet { color: var(--gold); font-size: 16px; flex-shrink: 0; margin-top: 4px; }
+.kdt-item p { font-family: var(--f-display); font-size: 20px; font-weight: 400; color: var(--cream); line-height: 1.7; }
+.kdt-right { padding-left: 40px; border-left: 1px solid var(--line); }
+.kdt-right p { font-family: var(--f-display); font-size: 20px; font-weight: 400; color: var(--cream); line-height: 1.7; margin-bottom: 28px; }
+.kdt-gold { font-family: var(--f-display); font-style: italic; font-size: 22px; font-weight: 400; color: var(--gold); line-height: 1.5; }
+
+/* =====================
+   ÜBER MICH
+   ===================== */
+.about { background: var(--bg); padding: 100px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.about-photo { position: relative; overflow: hidden; }
+.about-photo img { width: 100%; display: block; object-fit: cover; object-position: center 5%; max-height: 680px; }
+/* Soft bottom fade so photo blends with section bg */
+.about-photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, transparent 55%, rgba(20,17,13,0.85) 100%),
+    linear-gradient(to top, transparent 75%, rgba(20,17,13,0.6) 100%);
+}
+.about-photo::before {
+  content: "";
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 22%;
+  background: linear-gradient(to top, rgba(20,17,13,0.9), transparent);
+  z-index: 2;
+}
+.about-text { padding-top: 8px; }
+.about-text h2 { margin-bottom: 28px; }
+.about-text p { font-family: var(--f-body); font-size: 15.5px; font-weight: 300; color: var(--text); line-height: 1.88; margin-bottom: 18px; }
+.about-text strong { color: var(--cream); font-weight: 500; }
+.about-quote {
+  margin-top: 32px; padding: 22px 26px;
+  border-left: 2px solid var(--gold);
+  font-family: var(--f-display); font-style: italic; font-size: 19px;
+  color: var(--cream); line-height: 1.55;
+}
+.about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.about-tags span {
+  font-family: var(--f-body);
+  font-size: 9.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(201,168,122,0.32); padding: 6px 14px;
+}
+
+/* =====================
+   ANGEBOTE
+   ===================== */
+.offers { background: var(--bg2); padding: 100px 0; }
+.section-head { text-align: center; margin-bottom: 52px; }
+.section-head .t-label { display: block; margin-bottom: 12px; }
+.offers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.offer-card { background: var(--bg2); padding: 42px 24px 36px; display: flex; flex-direction: column; transition: background 0.3s; }
+.offer-card:hover { background: var(--bg3); }
+.offer-icon { margin-bottom: 24px; opacity: 0.85; }
+.offer-tag { font-family: var(--f-body); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.offer-title { font-family: var(--f-body); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream); margin-bottom: 14px; }
+.offer-desc { font-family: var(--f-body); font-size: 13.5px; font-weight: 300; color: var(--text); line-height: 1.8; flex: 1; margin-bottom: 26px; }
+.offer-price { font-family: var(--f-display); font-size: 20px; font-style: italic; color: var(--gold); margin-bottom: 18px; }
+
+/* =====================
+   TESTIMONIALS
+   ===================== */
+.testi { background: var(--bg); padding: 100px 0; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 52px; }
+.testi-card { background: var(--bg); padding: 40px 28px; }
+.testi-q {
+  font-family: var(--f-display); font-style: italic; font-size: 17px; font-weight: 300;
+  color: var(--text); line-height: 1.85; margin-bottom: 22px;
+}
+.testi-q::before { content: "\201E"; display: block; font-size: 30px; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+.testi-name { font-family: var(--f-body); font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+/* =====================
+   MUSIK
+   ===================== */
+.musik { background: var(--bg3); padding: 80px 0; border-top: 1px solid var(--line); }
+.musik-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.musik-text h2 { margin-bottom: 14px; }
+.musik-text p { font-family: var(--f-body); font-size: 15px; font-weight: 300; color: var(--text); max-width: 480px; }
+
+/* =====================
+   CTA
+   ===================== */
+.cta-sec { background: var(--bg2); padding: 100px 0; text-align: center; border-top: 1px solid var(--line); }
+.cta-sec .glow { font-size: clamp(52px, 9vw, 100px); display: block; }
+.cta-sans { display: block; font-family: var(--f-body); font-size: clamp(16px, 2.8vw, 32px); font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cream); margin-top: -10px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+
+/* =====================
+   FOOTER
+   ===================== */
+footer { background: var(--bg); border-top: 1px solid var(--line); padding: 44px 0; text-align: center; }
+.foot-copy { font-family: var(--f-body); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
+.foot-links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.foot-links a { font-family: var(--f-body); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.foot-links a:hover { color: var(--gold); }
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; gap: 20px; position: fixed; top: 68px; left: 0; right: 0; background: rgba(20,17,13,0.98); padding: 28px 24px; border-bottom: 1px solid var(--line); z-index: 99; }
+  .nav-toggle { display: block; }
+  .wrap { padding: 0 24px; }
+  .hero-content { padding: 110px 24px 80px; max-width: 100%; }
+  .hero-photo img { object-position: 75% center; }
+  .hero-photo::after { background: linear-gradient(to right, rgba(20,17,13,0.95) 0%, rgba(20,17,13,0.7) 50%, rgba(20,17,13,0.2) 100%), linear-gradient(to top, rgba(20,17,13,0.9) 0%, transparent 50%); }
+  .kdt-grid { grid-template-columns: 1fr; gap: 48px; }
+  .kdt-right { padding-left: 0; border-left: none; border-top: 1px solid var(--line); padding-top: 36px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { max-height: 55vw; overflow: hidden; }
+  .offers-grid { grid-template-columns: 1fr 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .musik-inner { flex-direction: column; text-align: center; }
+  .kdt { padding: 70px 0; }
+  .about, .offers, .testi, .cta-sec { padding: 70px 0; }
+}
+@media (max-width: 560px) { .offers-grid { grid-template-columns: 1fr; } }
+
+</style>
+<style>
+.legal-page { padding: 120px 0 80px; min-height: 80vh; }
+.legal-page h1 { font-family: var(--f-display); font-size: clamp(32px,4vw,48px); color: var(--cream); margin-bottom: 36px; }
+.legal-page h2 { font-family: var(--f-display); font-size: clamp(20px,2.5vw,28px); color: var(--cream); margin: 32px 0 14px; }
+.legal-page p, .legal-page li { font-family: var(--f-body); font-size: 15px; font-weight: 300; color: var(--text); line-height: 1.85; margin-bottom: 14px; }
+.legal-page ul { padding-left: 20px; margin-bottom: 14px; }
+.legal-page a { color: var(--gold); text-decoration: underline; }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="nav-name" href="index.html">Katharina Rahmig</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html#ueber-mich">Über mich</a>
+    <a href="index.html#angebote">Angebote</a>
+    <a href="index.html#stimmen">Was Teilnehmerinnen sagen</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menü">&#9776;</button>
+</nav>
+<section class="legal-page">
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    
+<h2>1. Verantwortliche</h2>
+<p>Verantwortlich im Sinne der Datenschutzgesetze ist:<br>Katharina Rahmig<br>Inkanu FZE<br>Sharjah Research Technology and Innovation Park (SRTIP)<br>Sharjah, Vereinigte Arabische Emirate<br>E-Mail: <a href="mailto:info@katharinarahmig.com">info@katharinarahmig.com</a></p>
+
+<h2>2. Erhebung und Verarbeitung von Daten</h2>
+<p>Beim Besuch dieser Website werden automatisch folgende Daten erhoben: IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs. Diese Daten werden zur technischen Bereitstellung der Website und zur Analyse des Nutzerverhaltens verwendet.</p>
+
+<h2>3. Bestelldaten</h2>
+<p>Bei einer Bestellung werden Name, E-Mail-Adresse und Zahlungsdaten erhoben. Die Zahlungsabwicklung erfolgt über Drittanbieter (Stan Store, Tentary), die eigene Datenschutzbestimmungen haben. Die Anbieterin speichert nur die für die Vertragserfüllung notwendigen Daten.</p>
+
+<h2>4. E-Mail-Marketing</h2>
+<p>Mit dem Kauf eines Produkts erklärst du dich einverstanden, relevante Informationen per E-Mail zu erhalten. Du kannst dich jederzeit von diesen E-Mails abmelden, indem du den Abmeldelink in der E-Mail klickst oder eine E-Mail an <a href="mailto:info@katharinarahmig.com">info@katharinarahmig.com</a> sendest.</p>
+
+<h2>5. Cookies</h2>
+<p>Diese Website verwendet technisch notwendige Cookies für den Betrieb der Website. Durch die Nutzung der Website stimmst du dem Einsatz dieser Cookies zu.</p>
+
+<h2>6. Drittanbieter</h2>
+<p>Diese Website verwendet möglicherweise folgende Drittanbieter-Dienste:</p>
+<ul>
+  <li>Google Fonts (Schriftarten) &ndash; Datenschutzerklärung: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+  <li>Spotify (Musik-Player) &ndash; Datenschutzerklärung: <a href="https://www.spotify.com/de/legal/privacy-policy/" target="_blank" rel="noopener">spotify.com/legal/privacy-policy</a></li>
+</ul>
+
+<h2>7. Deine Rechte</h2>
+<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Wende dich dazu an: <a href="mailto:info@katharinarahmig.com">info@katharinarahmig.com</a></p>
+
+<h2>8. Änderungen</h2>
+<p>Diese Datenschutzerklärung kann jederzeit aktualisiert werden. Die aktuelle Version ist stets auf dieser Seite abrufbar.</p>
+
+<p><em>Stand: Juli 2026</em></p>
+
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-copy">&copy; Katharina Rahmig &nbsp;&middot;&nbsp; Inkanu FZE. Alle Rechte vorbehalten.</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="https://inkanu.tentary.com/p/sxNg2S" target="_blank" rel="noopener">The Shift</a>
+      <a href="https://inkanu.my.canva.site/magnetic" target="_blank" rel="noopener">Magnetic Code</a>
+      <a href="agb.html">AGB</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 50), {passive:true});
+</script>
+</body>
+</html>
