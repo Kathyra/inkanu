@@ -170,7 +170,7 @@ nav.solid { background: rgba(20,17,13,0.97); backdrop-filter: blur(10px); }
 .hero-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center center;   /* landscape photo, face naturally framed */
+  object-position: 72% center;   /* show face on right side of landscape photo */
 }
 /* Gradient: dark opaque left → fades out right, never reaches the edge as a hard cut */
 .hero-photo::after {
@@ -190,8 +190,8 @@ nav.solid { background: rgba(20,17,13,0.97); backdrop-filter: blur(10px); }
 }
 .hero-content {
   position: relative; z-index: 2;
-  padding: 120px 52px 90px;
-  max-width: 52%;
+  padding: 80px 52px 80px;
+  max-width: 50%;
 }
 
 /* Hero text — all inline styles live here so nothing is overridden elsewhere */
@@ -359,7 +359,7 @@ footer { background: var(--bg); border-top: 1px solid var(--line); padding: 44px
   /* Mobile hero: full bleed photo, text at bottom over gradient */
   .hero { min-height: 100svh; display: flex; align-items: flex-end; }
   .hero-photo { position: absolute; inset: 0; }
-  .hero-photo img { object-position: 65% top; }
+  .hero-photo img { object-position: 80% center; }   /* face is right side */
   .hero-photo::after {
     background:
       linear-gradient(to top, rgba(20,17,13,0.98) 0%, rgba(20,17,13,0.85) 35%, rgba(20,17,13,0.1) 65%, transparent 100%),
